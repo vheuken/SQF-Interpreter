@@ -13,7 +13,7 @@ class Statement
     return normalized_str
   end
   
-  def to_str
+  def to_s
     @normalized_statement_str
   end
 end

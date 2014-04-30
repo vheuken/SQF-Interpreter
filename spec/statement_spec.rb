@@ -19,24 +19,24 @@ describe Statement do
         
         it 'replaces line endings with spaces' do
           statement = Statement.new('\n;')
-          statement.to_str.should eq(' ;')
+          statement.to_s.should eq(' ;')
          
           statement = Statement.new('\n\n;')
-          statement.to_str.should eq('  ;')
+          statement.to_s.should eq('  ;')
         
           statement = Statement.new('1 +\n1\n;')
-          statement.to_str.should eq('1 + 1 ;')
+          statement.to_s.should eq('1 + 1 ;')
         end
         
         it 'replaces tabs with spaces' do
           statement = Statement.new('\t;')
-          statement.to_str.should eq(' ;')
+          statement.to_s.should eq(' ;')
           
           statement = Statement.new('\t\t;')
-          statement.to_str.should eq('  ;')
+          statement.to_s.should eq('  ;')
         
           statement = Statement.new('1 +\t1\t;')
-          statement.to_str.should eq('1 + 1 ;')
+          statement.to_s.should eq('1 + 1 ;')
         end
       end
     end
