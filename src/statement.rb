@@ -8,7 +8,9 @@ class Statement
   end
   
   def normalize(statement_str)
-    return statement_str.gsub('\n', ' ')
+    normalized_str = statement_str.gsub('\n', ' ')
+    normalized_str.gsub!('\t', ' ')
+    return normalized_str
   end
   
   def to_str
