@@ -16,6 +16,17 @@ describe Statement do
           expect { Statement.new(';') }.to_not raise_error
           expect { Statement.new('1 + 1;') }.to_not raise_error
         end
+        
+        it 'replaces line endings with spaces' do
+          statement = Statement.new('\n;')
+          statement.to_str.should eq(' ;')
+         
+          statement = Statement.new('\n\n;')
+          statement.to_str.should eq('  ;')
+        
+          statement = Statement.new('1 +\n1\n;')
+          statement.to_str.should eq('1 + 1 ;')
+        end
       end
     end
   end
